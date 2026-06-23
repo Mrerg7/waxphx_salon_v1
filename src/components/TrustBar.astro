@@ -1,0 +1,22 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="bg-white border-y border-terracotta/10">
+  <div class="max-w-screen-xl mx-auto px-6 py-6">
+    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+      {items.map((item) => (
+        <div class="flex items-center gap-x-2 text-xs uppercase tracking-[2px] font-semibold text-stone-500">
+          <svg class="w-3.5 h-3.5 text-terracotta" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          <span>{item}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

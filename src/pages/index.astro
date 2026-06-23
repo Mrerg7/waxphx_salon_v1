@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import WhySection from '../components/WhySection.astro';
+import MarketSection from '../components/MarketSection.astro';
+import UseCasesSection from '../components/UseCasesSection.astro';
+import InvestmentSection from '../components/InvestmentSection.astro';
+import ClosingSection from '../components/ClosingSection.astro';
+import Footer from '../components/Footer.astro';
+import { getEntry } from 'astro:content';
+
+const siteContent = await getEntry('site', 'index');
+if (!siteContent) throw new Error('Site content not found');
+---
+
+<BaseLayout>
+  <Nav />
+  <main>
+    <Hero content={siteContent} />
+    <TrustBar items={siteContent.data.trustBar} />
+    <WhySection content={siteContent} />
+    <MarketSection content={siteContent} />
+    <UseCasesSection content={siteContent} />
+    <InvestmentSection content={siteContent} />
+    <ClosingSection content={siteContent} />
+  </main>
+  <Footer />
+</BaseLayout>

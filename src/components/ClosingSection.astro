@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { acquisitionMailto } from '../constants/site';
+
+interface Props {
+  content: CollectionEntry<'site'>;
+}
+
+const { content } = Astro.props;
+const { closing } = content.data;
+const mailto = acquisitionMailto(
+  'Domain Acquisition: waxphx.salon',
+  'Hello,\n\nI am interested in acquiring waxphx.salon.\n\nIntended use:\nBudget range:\n\nThank you.',
+);
+---
+
+<section class="max-w-screen-xl mx-auto px-6 py-24">
+  <div class="glass rounded-3xl p-8 md:p-16 text-center max-w-4xl mx-auto">
+    <h2 class="text-3xl sm:text-5xl font-display tracking-tighter leading-tight mb-6 text-stone-800">
+      {closing.title}
+    </h2>
+    <p class="text-lg text-stone-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+      {closing.description}
+    </p>
+
+    <a
+      href={mailto}
+      class="closing-cta inline-flex items-center gap-x-3 px-12 py-5 bg-terracotta hover:bg-terracotta/80 transition-all text-white font-semibold rounded-2xl text-lg shadow-xl shadow-terracotta/20"
+    >
+      <span>{closing.cta}</span>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+    </a>
+
+    <p class="mt-6 text-sm text-stone-400">{closing.footnote}</p>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --color-terracotta: #c2795e;
+  --color-sand: #e8d5b7;
+  --color-cream: #faf7f0;
+  --color-sage: #9caf8e;
+  --color-desert: #d4a574;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-stone-800 antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #c2795e, #d4a574, #9caf8e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-bg {
+    background: linear-gradient(180deg, #faf7f0 0%, #f5efe0 50%, #efe8d6 100%);
+  }
+
+  .section-bg {
+    background: #f5efe0;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(194, 121, 94, 0.15);
+  }
+
+  .nav-scrolled {
+    background: rgba(250, 247, 240, 0.95);
+    backdrop-filter: blur(20px);
+  }
+
+  .metric {
+    font-size: 2.25rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .use-case-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .use-case-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      0 20px 25px -5px rgba(194, 121, 94, 0.15),
+      0 8px 10px -6px rgba(194, 121, 94, 0.1);
+  }
+
+  .closing-cta {
+    animation: pulse-glow 2s infinite ease-in-out;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(194, 121, 94, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(194, 121, 94, 0.4);
+    }
+  }
+}

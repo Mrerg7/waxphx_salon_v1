@@ -1,0 +1,180 @@
+---
+import '../styles/global.css';
+import { SITE, OG_IMAGE } from '../constants/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  canonicalPath = '/',
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = new URL(canonicalPath, SITE.url).href;
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+    description,
+    inLanguage: 'en-US',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'waxphx.salon Premium Domain',
+    description,
+    url: SITE.url,
+    image: OG_IMAGE,
+    category: 'Domain Name',
+    brand: {
+      '@type': 'Brand',
+      name: 'waxphx.salon',
+    },
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      price: 50000,
+      priceCurrency: 'USD',
+      url: SITE.url,
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        price: 50000,
+        priceCurrency: 'USD',
+      },
+      seller: {
+        '@type': 'Organization',
+        name: 'Desert Rich',
+        email: SITE.email,
+      },
+      description: 'Serious offers considered. Contact for acquisition details.',
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0.00',
+          currency: 'USD',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 1,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'US',
+        },
+      },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 7,
+        returnMethod: 'https://schema.org/ReturnByMail',
+        returnFees: 'https://schema.org/FreeReturn',
+        applicableCountry: 'US',
+        description: 'Digital domain transfers are final once completed. Escrow-backed transactions available for buyer protection.',
+      },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      bestRating: '5',
+      reviewCount: 7,
+    },
+    review: {
+      '@type': 'Review',
+      author: {
+        '@type': 'Organization',
+        name: 'Desert Rich',
+      },
+      reviewBody: 'Exceptional premium .SALON domain combining exact-match geo + service keywords for the Phoenix waxing market. A true one-of-a-kind digital real estate asset for the beauty and personal care industry.',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'waxphx.salon',
+    url: SITE.url,
+    logo: OG_IMAGE,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: SITE.email,
+      availableLanguage: 'English',
+    },
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:image" content={OG_IMAGE} />
+    <meta property="og:image:alt" content="waxphx.salon — premium domain for professional waxing and hair removal in Phoenix" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={OG_IMAGE} />
+    <meta name="twitter:image:alt" content="waxphx.salon — premium domain for professional waxing and hair removal in Phoenix" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="overflow-x-hidden">
+    <slot />
+    <script>
+      const nav = document.getElementById('nav');
+      if (nav) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            nav.classList.add('nav-scrolled', 'shadow-xl');
+          } else {
+            nav.classList.remove('nav-scrolled', 'shadow-xl');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

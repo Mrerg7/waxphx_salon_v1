@@ -1,0 +1,91 @@
+---
+import { SITE, acquisitionMailto } from '../constants/site';
+
+const mailto = acquisitionMailto(
+  'Domain Acquisition: waxphx.salon',
+  'Hello,\n\nI am interested in acquiring waxphx.salon.\n\nIntended use:\nBudget range:\n\nThank you.',
+);
+---
+
+<footer id="contact" class="relative overflow-hidden">
+  <!-- Acquisition CTA band -->
+  <div class="relative border-t border-terracotta/20 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900">
+    <div class="absolute inset-0 opacity-20" aria-hidden="true">
+      <div
+        class="absolute inset-0"
+        style="background-image: linear-gradient(rgba(194,121,94,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(194,121,94,0.1) 1px, transparent 1px); background-size: 40px 40px;"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-screen-xl mx-auto px-6 py-20">
+      <div class="rounded-3xl border border-terracotta/20 bg-stone-800/60 backdrop-blur p-8 md:p-12">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-widest uppercase mb-5"
+            >
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Domain Available for Acquisition
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight mb-4 text-white">
+              Secure <span class="gradient-text">waxphx.salon</span> before the category closes.
+            </h2>
+            <p class="text-stone-300 text-lg max-w-2xl leading-relaxed">
+              Premium exact-match .SALON domains in high-growth beauty markets move quickly. Direct acquisition
+              inquiries are handled confidentially with flexible terms, escrow-ready transfer, and a clean title.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl border border-white/10 bg-stone-900/60 p-6 md:p-8">
+              <p class="text-xs uppercase tracking-[0.2em] text-stone-400 mb-2">Acquisition contact</p>
+              <a
+                href={mailto}
+                class="block text-2xl sm:text-3xl font-semibold text-terracotta hover:text-terracotta/80 transition-colors break-all mb-6"
+              >
+                {SITE.email}
+              </a>
+              <a
+                href={mailto}
+                class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-terracotta to-desert text-white font-bold rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-transform"
+              >
+                <span>Begin Confidential Inquiry</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </a>
+              <p class="mt-4 text-center text-[11px] text-stone-400 tracking-wide">
+                Serious buyers only · Response within 24 hours · Escrow protected
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal footer -->
+  <div class="border-t border-white/10 bg-stone-900">
+    <div class="max-w-screen-xl mx-auto px-6 py-10">
+      <p class="text-xs text-stone-400 leading-relaxed max-w-4xl mb-8">
+        This website is for demonstration and informational purposes only. It does not constitute an offer of
+        services, a commitment to deploy, or a guarantee of outcomes. All statistics, projections, and references
+        to specific technologies are based on publicly available information as of {SITE.disclaimerDate} and are
+        subject to change.
+      </p>
+
+      <div
+        class="flex flex-col md:flex-row gap-y-4 items-start md:items-center justify-between text-xs text-stone-400"
+      >
+        <div>© {SITE.year} waxphx.salon — Premium Domain Asset</div>
+        <div class="text-[10px]">{SITE.location} · Cloudflare Registrar · Clean Title</div>
+      </div>
+    </div>
+  </div>
+</footer>

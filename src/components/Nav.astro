@@ -1,0 +1,45 @@
+---
+import { acquisitionMailto } from '../constants/site';
+
+const mailto = acquisitionMailto();
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="nav">
+  <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-x-3">
+      <div
+        class="w-9 h-9 bg-gradient-to-br from-terracotta to-desert rounded-xl flex items-center justify-center"
+      >
+        <span class="text-white font-bold text-lg">W</span>
+      </div>
+      <div>
+        <span class="font-display text-2xl font-semibold tracking-tighter">waxphx</span>
+        <span class="text-xs text-stone-500 font-mono block -mt-1">.SALON</span>
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-x-8 text-sm text-stone-600">
+      <a href="#why" class="hover:text-terracotta transition-colors">Why This Domain</a>
+      <a href="#usecases" class="hover:text-terracotta transition-colors">Business Models</a>
+      <a href="#market" class="hover:text-terracotta transition-colors">Market Opportunity</a>
+    </div>
+
+    <div class="flex items-center gap-x-3 sm:gap-x-4">
+      <a
+        href="#contact"
+        class="hidden sm:inline-flex px-6 py-2.5 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
+      >
+        Inquire Now
+      </a>
+      <a
+        href={mailto}
+        class="px-5 sm:px-6 py-2.5 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all inline-flex items-center gap-x-2"
+      >
+        <span>Secure It Today</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</nav>
