@@ -9,7 +9,7 @@ export const SITE = {
   location: 'Phoenix, Arizona',
   year: 2026,
   disclaimerDate: 'June 22, 2026',
-  googleSiteVerification: '',
+  googleSiteVerification: 'BB-DMRwNpMU8fUFd2G-_iljqz9OYVyYuTYYxBT8xaXw',
 } as const;
 
 export const HERO_IMAGE =
