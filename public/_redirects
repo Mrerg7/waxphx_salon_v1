@@ -1,1 +1,3 @@
-/404 /404/ 301
+https://www.waxphx.salon/* https://waxphx.salon/:splat 301
+/index.html / 301
+/favicon.ico /favicon.svg 301
