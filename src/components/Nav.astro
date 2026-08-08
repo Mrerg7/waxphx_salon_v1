@@ -2,13 +2,18 @@
 import { acquisitionMailto } from '../constants/site';
 
 const mailto = acquisitionMailto();
+const navLinks = [
+  { href: '#why', label: 'Why This Domain' },
+  { href: '#usecases', label: 'Business Models' },
+  { href: '#market', label: 'Market Opportunity' },
+];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="nav">
-  <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
+  <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-x-3">
       <div
-        class="w-9 h-9 bg-gradient-to-br from-terracotta to-desert rounded-xl flex items-center justify-center"
+        class="w-9 h-9 bg-gradient-to-br from-terracotta to-desert rounded-xl flex items-center justify-center shrink-0"
       >
         <span class="text-white font-bold text-lg">W</span>
       </div>
@@ -19,26 +24,69 @@ const mailto = acquisitionMailto();
     </a>
 
     <div class="hidden md:flex items-center gap-x-8 text-sm text-stone-600">
-      <a href="#why" class="hover:text-terracotta transition-colors">Why This Domain</a>
-      <a href="#usecases" class="hover:text-terracotta transition-colors">Business Models</a>
-      <a href="#market" class="hover:text-terracotta transition-colors">Market Opportunity</a>
+      {navLinks.map((link) => (
+        <a href={link.href} class="hover:text-terracotta transition-colors">{link.label}</a>
+      ))}
     </div>
 
-    <div class="flex items-center gap-x-3 sm:gap-x-4">
+    <div class="hidden md:flex items-center gap-x-3 sm:gap-x-4">
       <a
         href="#contact"
-        class="hidden sm:inline-flex px-6 py-2.5 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
+        class="hidden sm:inline-flex px-6 py-3 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
       >
         Inquire Now
       </a>
       <a
         href={mailto}
-        class="px-5 sm:px-6 py-2.5 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all inline-flex items-center gap-x-2"
+        class="px-5 sm:px-6 py-3 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all inline-flex items-center gap-x-2"
       >
         <span>Secure It Today</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
         </svg>
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-toggle"
+      class="md:hidden p-2 rounded-lg hover:bg-terracotta/10 transition-colors"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+    >
+      <svg id="menu-icon-open" class="w-6 h-6 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg id="menu-icon-close" class="w-6 h-6 text-stone-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden glass mx-4 rounded-2xl border border-terracotta/10 overflow-hidden">
+    <div class="px-6 py-4 space-y-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block px-4 py-3 rounded-xl text-sm font-medium text-stone-700 hover:bg-terracotta/10 hover:text-terracotta transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+    <div class="px-6 py-4 border-t border-terracotta/10 space-y-3">
+      <a
+        href="#contact"
+        class="block w-full text-center px-6 py-3 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
+      >
+        Inquire Now
+      </a>
+      <a
+        href={mailto}
+        class="block w-full text-center px-6 py-3 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all"
+      >
+        Secure It Today
       </a>
     </div>
   </div>
