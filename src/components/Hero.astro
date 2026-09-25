@@ -11,22 +11,28 @@ const { hero, domainPreview } = content.data;
 const mailto = acquisitionMailto();
 ---
 
-<section class="hero-bg min-h-screen flex items-center pt-16 relative">
-  <div class="max-w-screen-xl mx-auto px-6 pt-12 pb-24">
+<section class="hero-bg min-h-svh flex items-center pt-16 relative">
+  <div class="max-w-screen-xl mx-auto px-6 pt-10 pb-24">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="max-w-4xl">
         <div
-          class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full bg-white/80 border border-terracotta/20 mb-6"
+          class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full bg-white/80 border border-terracotta/20 mb-5"
         >
           <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-          <span class="uppercase tracking-[2px] text-xs font-semibold text-terracotta">{hero.badge}</span>
+          <span
+            class="uppercase tracking-[1.5px] sm:tracking-[2px] text-[11px] sm:text-xs font-semibold text-terracotta"
+          >
+            {hero.badge}
+          </span>
         </div>
 
-        <h1 class="text-5xl sm:text-7xl md:text-[80px] leading-[0.96] font-display tracking-tighter mb-6 text-stone-800">
+        <h1
+          class="text-[2.25rem] sm:text-6xl lg:text-[72px] xl:text-[80px] leading-[1.04] sm:leading-[0.96] font-display tracking-tighter mb-5 text-stone-800"
+        >
           {hero.headline} <span class="gradient-text">{hero.headlineAccent}</span>
         </h1>
 
-        <p class="max-w-lg text-xl sm:text-2xl text-stone-500 mb-10">
+        <p class="max-w-lg text-lg sm:text-xl lg:text-2xl text-stone-500 mb-8">
           <span class="font-semibold text-stone-800">waxphx.salon</span>
           {" — Rare. Exact-match. Industry-perfect. The premier domain capturing body waxing, facial waxing, Brazilian waxing, men's grooming, and professional hair removal services across the Valley of the Sun."}
         </p>
@@ -34,7 +40,7 @@ const mailto = acquisitionMailto();
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a
             href={mailto}
-            class="group px-10 py-4 bg-terracotta hover:bg-terracotta/80 transition-all text-white font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-lg shadow-xl shadow-terracotta/20"
+            class="group px-8 sm:px-10 py-4 bg-terracotta hover:bg-terracotta/80 transition-all text-white font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-lg shadow-xl shadow-terracotta/20 w-full sm:w-auto"
           >
             <span>Inquire to Acquire</span>
             <svg class="w-5 h-5 group-active:scale-95 transition-transform" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -43,17 +49,25 @@ const mailto = acquisitionMailto();
           </a>
 
           <a
-            href="#why"
-            class="group px-8 py-4 border border-stone-300 hover:border-terracotta rounded-2xl flex items-center gap-x-3 text-lg text-stone-600 hover:text-terracotta transition-all"
+            href="#offer"
+            class="group px-6 sm:px-8 py-4 border border-stone-300 hover:border-terracotta rounded-2xl flex items-center justify-center gap-x-3 text-lg text-stone-600 hover:text-terracotta transition-all w-full sm:w-auto"
           >
-            <span>See Why It Matters</span>
-            <svg class="w-5 h-5 group-hover:translate-y-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            <span>Make an Offer</span>
+            <svg class="w-5 h-5 group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </a>
         </div>
 
-        <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-stone-500">
+        <div
+          class="mt-6 inline-flex items-center gap-x-3 px-4 py-2.5 rounded-2xl bg-white/70 border border-terracotta/20"
+        >
+          <span class="text-xs uppercase tracking-[1.5px] font-semibold text-stone-400">Asking</span>
+          <span class="text-xl font-semibold text-stone-800">$50,000</span>
+          <span class="text-sm text-terracotta font-semibold">· Reasonable offers considered</span>
+        </div>
+
+        <div class="mt-7 flex flex-wrap items-center gap-x-7 gap-y-2 text-sm text-stone-500">
           <div class="flex items-center gap-x-2">
             <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
@@ -66,20 +80,27 @@ const mailto = acquisitionMailto();
             </svg>
             <span>Instant transfer</span>
           </div>
+          <div class="flex items-center gap-x-2">
+            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Clean title</span>
+          </div>
         </div>
       </div>
 
       <div class="flex flex-col gap-5">
         <img
           src={HERO_IMAGE}
-          alt="Luxury Phoenix-area spa interior with modern organic design — waxphx.salon premium domain"
+          alt="waxphx.salon premium domain card — asking price $50,000 for the exact-match waxing and hair removal domain in Phoenix, Arizona"
           class="w-full rounded-3xl border border-terracotta/20 shadow-2xl shadow-terracotta/10 object-cover"
           width="1200"
           height="800"
           loading="eager"
+          decoding="async"
           fetchpriority="high"
         />
-        <div class="glass px-8 py-6 rounded-3xl w-full">
+        <div class="glass px-6 sm:px-8 py-6 rounded-3xl w-full">
           <div class="flex items-center gap-x-3 mb-4">
             <div class="px-3 py-1 bg-white/80 rounded-full text-xs font-mono tracking-widest text-stone-600">{domainPreview.domain}</div>
           </div>
@@ -89,7 +110,7 @@ const mailto = acquisitionMailto();
               <div class="text-xs text-stone-400">{domainPreview.valuationLabel}</div>
               <div class="text-2xl font-semibold text-stone-800">{domainPreview.valuationRange}</div>
             </div>
-            <div class="text-[10px] text-terracotta font-semibold shrink-0">{domainPreview.tier}</div>
+            <div class="text-[10px] text-terracotta font-semibold shrink-0 text-right">{domainPreview.tier}</div>
           </div>
         </div>
       </div>

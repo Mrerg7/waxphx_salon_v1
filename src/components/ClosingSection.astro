@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { acquisitionMailto } from '../constants/site';
+import { SITE } from '../constants/site';
 
 interface Props {
   content: CollectionEntry<'site'>;
@@ -8,13 +8,10 @@ interface Props {
 
 const { content } = Astro.props;
 const { closing } = content.data;
-const mailto = acquisitionMailto(
-  'Domain Acquisition: waxphx.salon',
-  'Hello,\n\nI am interested in acquiring waxphx.salon.\n\nIntended use:\nBudget range:\n\nThank you.',
-);
+const email = SITE.email;
 ---
 
-<section class="max-w-screen-xl mx-auto px-6 py-24">
+<section class="max-w-screen-xl mx-auto px-6 py-20 sm:py-24 scroll-mt-24">
   <div class="glass rounded-3xl p-8 md:p-16 text-center max-w-4xl mx-auto">
     <h2 class="text-3xl sm:text-5xl font-display tracking-tighter leading-tight mb-6 text-stone-800">
       {closing.title}
@@ -24,8 +21,8 @@ const mailto = acquisitionMailto(
     </p>
 
     <a
-      href={mailto}
-      class="closing-cta inline-flex items-center gap-x-3 px-12 py-5 bg-terracotta hover:bg-terracotta/80 transition-all text-white font-semibold rounded-2xl text-lg shadow-xl shadow-terracotta/20"
+      href="#offer"
+      class="closing-cta inline-flex items-center gap-x-3 px-8 sm:px-12 py-5 bg-terracotta hover:bg-terracotta/80 transition-all text-white font-semibold rounded-2xl text-base sm:text-lg shadow-xl shadow-terracotta/20"
     >
       <span>{closing.cta}</span>
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -34,5 +31,10 @@ const mailto = acquisitionMailto(
     </a>
 
     <p class="mt-6 text-sm text-stone-400">{closing.footnote}</p>
+    <p class="mt-2 text-sm text-stone-500">
+      Or email
+      <a href={`mailto:${email}`} class="text-terracotta font-semibold hover:text-terracotta/80">{email}</a>
+      directly.
+    </p>
   </div>
 </section>

@@ -1,5 +1,5 @@
 hero:
-  badge: "Premium Domain — Available for Acquisition"
+  badge: "Premium Domain · For Sale"
   headline: "Own the most strategic, memorable, and market-defining digital address in"
   headlineAccent: "Phoenix beauty"
   subheadline: ""
@@ -108,13 +108,33 @@ investment:
 
 closing:
   title: "Own the Name That Defines Professional Waxing in Phoenix"
-  description: "waxphx.salon is available for serious acquisition discussions. Flexible structures and qualified buyer terms will be considered. Inquire privately to receive detailed information and begin the conversation."
+  description: "waxphx.salon is available for serious acquisition at an asking price of $50,000, with reasonable offers considered. Flexible structures and qualified buyer terms will be discussed privately — inquire to receive full details and begin the conversation."
   cta: "Begin Confidential Inquiry"
-  footnote: "Serious buyers only · Response within 24 hours · Escrow protected"
+  footnote: "Asking $50,000 · Serious buyers only · Response within 24 hours · Escrow protected"
 
 domainPreview:
   domain: "waxphx.salon"
   description: "Exact-match geo + service premium .SALON domain. The definitive digital address for professional waxing and hair removal in Phoenix."
-  valuationLabel: "Acquisition Value"
-  valuationRange: "Premium Tier"
-  tier: "ONE-OF-A-KIND ASSET"
+  valuationLabel: "Asking Price"
+  valuationRange: "$50,000 USD"
+  tier: "OPEN TO REASONABLE OFFERS"
+
+faq:
+  label: "Buyer FAQ"
+  title: "Questions Before You Inquire"
+  subtitle: "Everything buyers ask before acquiring waxphx.salon:"
+  items:
+    - question: "Is waxphx.salon actually for sale?"
+      answer: "Yes. waxphx.salon is listed for sale by its owner and is available for immediate acquisition. The domain is unlocked, carries a clean title, and transfers to your registrar as soon as escrow confirms the funds."
+    - question: "How much does waxphx.salon cost?"
+      answer: "The asking price is $50,000 USD. Reasonable offers from qualified buyers are considered, and flexible structures — including escrow-held installment payments — can be discussed for the right project."
+    - question: "How do I buy a domain safely?"
+      answer: "Every transaction closes through a licensed third-party escrow service. You fund escrow, we release the authorization code, and escrow releases payment only after the domain sits in your registrar account. No wire is sent to a stranger."
+    - question: "How long does the transfer take?"
+      answer: "Most .SALON transfers complete in 1–5 business days after escrow funding clears. The registrar lock is removed immediately and we assist with every step of the push or transfer."
+    - question: "Why is a premium .SALON domain worth investing in?"
+      answer: "It combines an exact-match geo keyword (PHX = Phoenix) with a high-intent service keyword (wax) on an industry-specific extension. That delivers instant branding, type-in traffic, and a strong starting position for local SEO in a 5M+ person metro."
+    - question: "Can I pay in installments or get a purchase agreement?"
+      answer: "Yes. Qualified buyers can request a written purchase agreement with staged payments held in escrow. Email sales@desertrich.com with your intended use and budget range to start the conversation."
+    - question: "Who do I contact to make an offer?"
+      answer: "Email sales@desertrich.com directly or use the private offer form on this page. All inquiries are handled confidentially with a response within 24 hours."

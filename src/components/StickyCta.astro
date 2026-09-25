@@ -1,0 +1,62 @@
+---
+import { acquisitionMailto } from '../constants/site';
+
+const mailto = acquisitionMailto();
+---
+
+<div
+  id="sticky-cta"
+  class="fixed bottom-0 left-0 right-0 z-40 lg:hidden transition-transform duration-300 ease-out"
+  style="transform: translateY(100%);"
+>
+  <div class="bg-cream/95 backdrop-blur border-t border-terracotta/20 shadow-[0_-8px_30px_rgba(28,25,23,0.12)]">
+    <div class="max-w-screen-xl mx-auto px-4 py-3 flex items-center gap-3" style="padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));">
+      <div class="hidden min-[360px]:flex flex-col leading-tight shrink-0 pl-1">
+        <span class="text-[10px] uppercase tracking-[1.5px] text-stone-400 font-semibold">Asking</span>
+        <span class="text-base font-semibold text-stone-800">$50,000</span>
+      </div>
+
+      <a
+        href="#offer"
+        class="flex-1 inline-flex items-center justify-center gap-x-2 px-5 py-3.5 bg-terracotta text-white text-sm font-semibold rounded-full shadow-lg shadow-terracotta/25 active:scale-[0.98] transition-transform"
+      >
+        <span>Make an Offer</span>
+      </a>
+
+      <a
+        href={mailto}
+        aria-label="Email sales@desertrich.com"
+        class="shrink-0 w-12 h-12 inline-flex items-center justify-center rounded-full border border-stone-300 text-stone-700 hover:border-terracotta hover:text-terracotta transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById('sticky-cta');
+  const footer = document.getElementById('contact');
+  let footerVisible = false;
+
+  const update = () => {
+    if (!bar) return;
+    const show = window.scrollY > 520 && !footerVisible;
+    bar.style.transform = show ? 'translateY(0)' : 'translateY(100%)';
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+
+  if (footer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(
+      (entries) => {
+        footerVisible = entries[0]?.isIntersecting ?? false;
+        update();
+      },
+      { threshold: 0.05 },
+    ).observe(footer);
+  }
+</script>

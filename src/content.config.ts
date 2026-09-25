@@ -76,6 +76,17 @@ const site = defineCollection({
       valuationRange: z.string(),
       tier: z.string(),
     }),
+    faq: z.object({
+      label: z.string(),
+      title: z.string(),
+      subtitle: z.string(),
+      items: z.array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        }),
+      ),
+    }),
   }),
 });
 

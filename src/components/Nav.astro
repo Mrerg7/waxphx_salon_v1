@@ -6,12 +6,13 @@ const navLinks = [
   { href: '#why', label: 'Why This Domain' },
   { href: '#usecases', label: 'Business Models' },
   { href: '#market', label: 'Market Opportunity' },
+  { href: '#faq', label: 'Buyer FAQ' },
 ];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="nav">
   <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-x-3">
+    <a href="/" class="flex items-center gap-x-3" aria-label="waxphx.salon home">
       <div
         class="w-9 h-9 bg-gradient-to-br from-terracotta to-desert rounded-xl flex items-center justify-center shrink-0"
       >
@@ -23,22 +24,22 @@ const navLinks = [
       </div>
     </a>
 
-    <div class="hidden md:flex items-center gap-x-8 text-sm text-stone-600">
+    <div class="hidden lg:flex items-center gap-x-7 text-sm text-stone-600">
       {navLinks.map((link) => (
-        <a href={link.href} class="hover:text-terracotta transition-colors">{link.label}</a>
+        <a href={link.href} class="py-2 hover:text-terracotta transition-colors">{link.label}</a>
       ))}
     </div>
 
-    <div class="hidden md:flex items-center gap-x-3 sm:gap-x-4">
+    <div class="hidden lg:flex items-center gap-x-3">
       <a
-        href="#contact"
-        class="hidden sm:inline-flex px-6 py-3 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
+        href="#offer"
+        class="px-5 py-2.5 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
       >
-        Inquire Now
+        Make an Offer
       </a>
       <a
         href={mailto}
-        class="px-5 sm:px-6 py-3 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all inline-flex items-center gap-x-2"
+        class="px-5 py-2.5 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all inline-flex items-center gap-x-2"
       >
         <span>Secure It Today</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -50,7 +51,7 @@ const navLinks = [
     <!-- Mobile hamburger -->
     <button
       id="mobile-menu-toggle"
-      class="md:hidden p-2 rounded-lg hover:bg-terracotta/10 transition-colors"
+      class="lg:hidden p-3 -mr-2 rounded-lg hover:bg-terracotta/10 transition-colors"
       aria-label="Toggle navigation menu"
       aria-expanded="false"
     >
@@ -64,7 +65,7 @@ const navLinks = [
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden glass mx-4 rounded-2xl border border-terracotta/10 overflow-hidden">
+  <div id="mobile-menu" class="lg:hidden hidden glass mx-4 rounded-2xl border border-terracotta/10 overflow-hidden">
     <div class="px-6 py-4 space-y-1">
       {navLinks.map((link) => (
         <a
@@ -77,14 +78,14 @@ const navLinks = [
     </div>
     <div class="px-6 py-4 border-t border-terracotta/10 space-y-3">
       <a
-        href="#contact"
-        class="block w-full text-center px-6 py-3 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
+        href="#offer"
+        class="block w-full text-center px-6 py-3.5 text-sm font-semibold rounded-full border border-terracotta/30 text-terracotta hover:bg-terracotta hover:text-white transition-all"
       >
-        Inquire Now
+        Make an Offer
       </a>
       <a
         href={mailto}
-        class="block w-full text-center px-6 py-3 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all"
+        class="block w-full text-center px-6 py-3.5 bg-terracotta text-white text-sm font-semibold rounded-full hover:bg-terracotta/80 transition-all"
       >
         Secure It Today
       </a>

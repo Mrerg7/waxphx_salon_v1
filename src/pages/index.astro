@@ -7,7 +7,10 @@ import WhySection from '../components/WhySection.astro';
 import MarketSection from '../components/MarketSection.astro';
 import UseCasesSection from '../components/UseCasesSection.astro';
 import InvestmentSection from '../components/InvestmentSection.astro';
+import FaqSection from '../components/FaqSection.astro';
 import ClosingSection from '../components/ClosingSection.astro';
+import OfferForm from '../components/OfferForm.astro';
+import StickyCta from '../components/StickyCta.astro';
 import Footer from '../components/Footer.astro';
 import { getEntry } from 'astro:content';
 
@@ -15,16 +18,19 @@ const siteContent = await getEntry('site', 'index');
 if (!siteContent) throw new Error('Site content not found');
 ---
 
-<BaseLayout>
+<BaseLayout faqs={siteContent.data.faq.items}>
   <Nav />
-  <main>
+  <main id="main">
     <Hero content={siteContent} />
     <TrustBar items={siteContent.data.trustBar} />
     <WhySection content={siteContent} />
     <MarketSection content={siteContent} />
     <UseCasesSection content={siteContent} />
     <InvestmentSection content={siteContent} />
+    <FaqSection content={siteContent} />
     <ClosingSection content={siteContent} />
+    <OfferForm />
   </main>
   <Footer />
+  <StickyCta />
 </BaseLayout>
